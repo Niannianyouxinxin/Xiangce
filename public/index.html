@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>黎若稼</title>
+	<link rel="stylesheet" href="cartoon.css">
+</head>
+<body>
+	<!-- <audio src="起风了.mp3" autoplay id="myaudio"></audio> -->
+	<button>小黎黎的相册</button>
+	<div class="box">
+		<div class="date"></div>
+		<ul class="image">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+		var div = document.querySelector(".box"),
+		    btn = document.querySelector("button");
+		btn.onclick = function(){
+			setTimeout(function(){
+				div.style.display = "block";
+			    btn.style.display = "none";
+			    var audio = new Audio();
+		        audio.src ="起风了.mp3";
+		        audio.setAttribute("autoplay","autoplay");
+	         	document.body.appendChild(audio);
+			},10)
+			
+		}
+			var date = (new Date()).valueOf();
+		    var on = (new Date(2019,8,10,0,0,0)).valueOf();
+		    var days = (date - on) / 60 / 1000 / 60 / 24;
+		    var days = Math.floor(days);
+		    var date = document.querySelector(".date");
+		    date.textContent = "陪伴黎若稼的" + days + "天";
+	</script>
+</body>
+</html>
